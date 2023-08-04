@@ -5,12 +5,13 @@
 // @description  Redirect YouTube shorts to default player
 // @author       Bennett Zhang
 // @match        *://*.youtube.com/*
-// @icon         /icons/icon32.png
-// @icon64       /icons/icon64.png
+// @icon         https://raw.githubusercontent.com/bennett-zhang/youtube-shorts-redirect/main/src/icons/icon32.png
+// @icon64       https://raw.githubusercontent.com/bennett-zhang/youtube-shorts-redirect/main/src/icons/icon64.png
+// @license      MIT
 // ==/UserScript==
 
-{
-  const redirect = function(url) {
+(function() {
+  function redirect(url) {
     if (url.includes("shorts/")) {
       window.location.replace(url.replace("shorts/", "watch?v="));
     }
@@ -27,4 +28,4 @@
   });
 
   redirect(window.location.href);
-}
+})();
